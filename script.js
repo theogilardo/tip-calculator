@@ -32,7 +32,7 @@ button.addEventListener('click', function(){
   resultService = parseInt(optionSelected(billService));
   resultPeople = parseInt(optionSelected(billPeople));
 
-  // Make Calculation
+  // Make the Calculation
 
   function compute(bill, service, people) {
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tip Calculator</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <img src="img/calculator.svg" class="photo__calculator" alt="calculator">
+            <div class="calculator">
+                <h1 class="header">Tip Calculator</h1>
+                <div class="money">
+                    <p>How much was the bill in $?</p>
+                    <!-- <label for="money">$</label> -->
+                    <input placeholder="Type Here" id="billAmount" name="money" type="text">
+                </div>
+                <div class="service">
+                    <p>How was your service?</p>
+                    <select id="billService" name="" id="">
+                        <option selected disabled>Choose an Option</option>
+                        <option value="5">Bad - 5%</option>
+                        <option value="10">Mediocre - 10%</option>
+                        <option value="15">Good - 15%</option>
+                        <option value="20">Excellent - 20%</option>
+                    </select>
+                </div>
+                <div class="people">
+                    <p>How many people are sharing the bill?</p>
+                    <select id="billPeople" name="" id="">
+                        <option value="" selected disabled>Choose an Option</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn">Calculate</button>
+            </div>
+            <div class="amount">
+                <h2 id="totalBill">Total</h2>
+            </div>
+        </div>
+    </div>
+
+  <script src="script.js" ></script>
+</body>
+</html>

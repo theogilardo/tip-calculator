@@ -1,10 +1,18 @@
 
 
-// Retrieve Data with btn click
+// Retrieve Data with btn click or enter
 
 button = document.querySelector('.btn')
 
-button.addEventListener('click', function(){
+button.addEventListener('click', calculator);
+
+document.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {
+        calculator();
+    }
+});
+
+function calculator() {
 
     // Bill Data
     var textSelected = document.getElementById('billAmount')
@@ -36,23 +44,27 @@ button.addEventListener('click', function(){
 
   function compute(bill, service, people) {
 
-      var total = Math.floor((bill * (service / 100)) / people);
-      return total
+      // Test if value empty
+      if(Number.isNaN(bill) || service === 0 || people === 0) {
+          alert('Please enter a value!')
+      } else {
+          // Compute result
+          var total = Math.round((bill * (service / 100)) / people);
+
+          // Select Result Element
+          var el = document.getElementById('totalBill')
+
+          // Modify Element
+          el.innerHTML = `$ ${total}<br><span>Each<span>`
+      }
   }
 
-  var finalBill = compute(resultBill, resultService, resultPeople)
+  compute(resultBill, resultService, resultPeople);
 
-  // Display Data
-
-      // Select Element
-      var el = document.getElementById('totalBill')
-
-      // Modify Element
-      el.innerHTML = `$ ${finalBill}<br><span>Each<span>`
+};
 
 
 
-});
 
 
 
